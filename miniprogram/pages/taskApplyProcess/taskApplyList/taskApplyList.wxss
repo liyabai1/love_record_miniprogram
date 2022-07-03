@@ -1,0 +1,37 @@
+/* pages/taskApplyProcess/taskApplyList/taskApplyList.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+}
+.listContainer {
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.item {
+  width: 85%;
+  margin: 10px auto;
+  padding: 15px 5px;
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+.item:first-child {
+  margin-top: 0px;
+}
+.item:last-child {
+  margin-bottom: 0px;
+}
+
+.content {
+  font-weight: bolder;
+}
+.score {
+  width: 7em;
+}
+.scoreNum {
+  color: var(--getscore-color);
+}

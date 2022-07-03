@@ -1,0 +1,8 @@
+/* pages/taskList/taskList.wxss */
+.container {
+  width: 100%;
+}
+
+.taskList {
+  width: 80%;
+}

@@ -1,0 +1,19 @@
+<!--components/taskItem/index.wxml-->
+<view class="taskItemContainer" bindtouchstart="touchstartHandler" catchtouchend="touchendHandler">
+  <view class="takInfoContainer">
+    <text class="taskName">{{content}}</text>
+    <text class="taskScore">
+      <text>可获积分: </text>
+      <text class="score">{{score}}</text>
+    </text>
+  </view>
+  <view class="optionContainer">
+    <block wx:if="{{type === 'dailyTask' }}">
+      <van-button wx:if="{{achieved}}" disabled="{{achieved}}" size="small" type="primary" round>已完成</van-button>
+      <van-button wx:else size="small" type="primary" plain custom-style="background-color:#fff5;z-index:10" round bind:click="finishTask" disabled="{{!isNowDay}}">完成</van-button>
+    </block>
+    <block wx:if="{{type === 'taskList' }}">
+      <van-button wx:if="{{showDelBtn}}" size="small" type="danger" plain round custom-style="background-color:#fff5" bind:click="deleteTask">删除</van-button>
+    </block>
+  </view>
+</view>

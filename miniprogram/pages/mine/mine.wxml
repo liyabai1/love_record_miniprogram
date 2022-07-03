@@ -1,0 +1,23 @@
+<!--pages/mine/mine.wxml-->
+<!-- 我的，导航栏第四栏 -->
+<view class="container">
+  <view class="userInfoContainer">
+    <view class="bg">
+      <button wx:if="{{!userInfo}}" open-type="getUserInfo" catchtap="getUserInfo" size="mini" plain type="primary">登录</button>
+    </view>
+    <view wx:if="{{userInfo}}" class="userInfoBox">
+      <image src="{{userInfo.avatarUrl}}" alt="" class="avatar" />
+      <text class="nickName">{{userInfo.nickName}}</text>
+      <text class="scorebox">
+        <text>总积分: </text>
+        <text class="score">{{score}}</text>
+      </text>
+    </view>
+  </view>
+  <view class="functionArea">
+    <view wx:for="{{functionlist}}" wx:key="path" class="functionItem" data-path="{{item.path}}" catchtap="navTo">
+      <text>{{item.name}}</text>
+      <van-icon name="arrow" color="#ccccff"></van-icon>
+    </view>
+  </view>
+</view>

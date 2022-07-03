@@ -1,0 +1,13 @@
+<!--pages/awardApply/awardApply.wxml-->
+<!-- 奖励申请页，主要用于奖励新增申请 -->
+<view class="container">
+  <view class="awardNameContainer">
+    <text class="label">请输入奖励介绍:</text>
+    <input type="text" class="inputBox" model:value="{{content}}" />
+  </view>
+  <view class="awardScoreContainer">
+    <text class="label">需消耗积分:</text>
+    <input type="number" class="inputBox" model:value="{{score}}" />
+  </view>
+  <button type="primary" class="submitBtn" catchtap="submit">提交</button>
+</view>

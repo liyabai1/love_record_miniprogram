@@ -1,0 +1,18 @@
+<!--pages/taskApplyProcess/taskCheck/taskCheck.wxml-->
+<!-- 新增任务审核 -->
+<view class="container">
+  <view class="taskInfoContainer">
+    <view class="content">
+      <text>任务介绍: </text>
+      <text class="contentText">{{content}}</text>
+    </view>
+    <view class="score">
+      <text>可获得积分: </text>
+      <text class="scoreNum">+{{score}}</text>
+    </view>
+  </view>
+  <view class="optionContainer">
+    <van-button round size="small" data-agree="{{false}}" catchtap="checkTask">拒绝</van-button>
+    <van-button type="primary" round size="small" data-agree="{{true}}" catchtap="checkTask">同意</van-button>
+  </view>
+</view>

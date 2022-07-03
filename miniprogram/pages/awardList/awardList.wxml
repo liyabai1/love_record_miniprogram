@@ -1,0 +1,24 @@
+<!--pages/awardList/awardList.wxml-->
+<!-- 奖励列表页，导航栏第三栏 -->
+<view class="container">
+  <view class="awardListContainer">
+    <block wx:for="{{list}}" wx:key="_id">
+      <view class="item">
+        <view class="info">
+          <text class="content">{{item.content}}</text>
+          <text class="score">
+            <text>所需积分: </text>
+            <text class="scoreNum">-{{item.score}}</text>
+          </text>
+        </view>
+        <view class="optionContainer">
+          <van-button type="primary" round size="small" color="#ccccff" catchtap="exchangeAward" data-_id="{{item._id}}">兑换</van-button>
+        </view>
+      </view>
+    </block>
+    <van-empty wx:if="{{list.length === 0}}" description="暂无奖励" />
+  </view>
+  <view style="width: 90%;padding: 10px 0px;">
+    <van-button type='primary' round size="large" plain custom-style="background-color:#fff5" catchtap="navTo">新增奖励</van-button>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+/* pages/taskApplyProcess/taskApplyList/taskCheck.wxss */
+.container {
+  width: 85%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.taskInfoContainer {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.content,
+.score {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.contentText {
+  font-weight: bolder;
+}
+
+.scoreNum {
+  color: var(--getscore-color);
+}
+
+.optionContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

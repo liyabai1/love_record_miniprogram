@@ -1,0 +1,15 @@
+<!--pages/taskList/taskList.wxml-->
+<!-- 任务清单页，导航栏第二栏 -->
+<view class="container">
+  <view class="taskList">
+    <block wx:for="{{taskList}}" wx:key="_id">
+      <task-item type="taskList" _id="{{item._id}}" content="{{item.content}}" score="{{item.score}}" catch:deleteSuccess="deleteSuccess" data-index="{{index}}"></task-item>
+    </block>
+    <van-empty wx:if="{{taskList.length === 0}}" description="暂无任务" />
+  </view>
+  <block>
+    <view style="width: 80%;">
+      <van-button catchtap="navTo" size="large" type="primary" plain custom-style="background-color:#fff5" round>新增任务</van-button>
+    </view>
+  </block>
+</view>

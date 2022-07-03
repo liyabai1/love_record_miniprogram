@@ -1,0 +1,16 @@
+<!--pages/taskApplyProcess/taskApplyList/taskApplyList.wxml-->
+<!-- 待审核的任务列表 -->
+<view class="container">
+  <scroll-view scroll-y="true" class="listContainer">
+    <block wx:for="{{list}}" wx:key="_id">
+      <view class="item" catchtap="navTo" data-_id="{{item._id}}" data-content="{{item.content}}" data-score="{{item.score}}">
+        <text class="content">{{item.content}}</text>
+        <view class="score">
+          <text>可获积分: </text>
+          <text class="scoreNum">{{item.score}}</text>
+        </view>
+      </view>
+    </block>
+    <van-empty wx:if="{{list.length === 0}}" description="暂无任务申请" />
+  </scroll-view>
+</view>

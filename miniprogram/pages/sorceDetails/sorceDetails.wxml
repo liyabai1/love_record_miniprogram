@@ -1,0 +1,23 @@
+<!--pages/sorceDetails/sorceDetails.wxml-->
+<!-- 积分明细页 -->
+<view class="container">
+  <scroll-view class="listContainer" scroll-y="true" catchscrolltolower="loadMoreData">
+    <block wx:for="{{scoreDetailsList}}" wx:key="_id">
+      <view class="item">
+        <view class="info">
+          <text class="name nowrap">{{item.details.content}}</text>
+          <text class="time">{{item.achieveTime}}</text>
+        </view>
+        <view class="score">
+          <text wx:if="{{item.details.type === 'task'}}" class="diff getscore">+{{item.details.score}}</text>
+          <text wx:if="{{item.details.type === 'award'}}" class="diff spendscore">-{{item.details.score}}</text>
+          <text class="remaining nowrap">余额: {{item.nowScore}}</text>
+        </view>
+      </view>
+    </block>
+    <van-empty wx:if="{{scoreDetailsList.length === 0}}" description="暂无明细" />
+    <block>
+      <view wx:if="{{isLastData}}" style="text-align: center;color: #dedede;padding: 20px;">已经到底啦~</view>
+    </block>
+  </scroll-view>
+</view>

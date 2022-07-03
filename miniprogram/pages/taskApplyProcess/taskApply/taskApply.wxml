@@ -1,0 +1,13 @@
+<!--pages/taskApplyProcess/taskApply/taskApply.wxml-->
+<!-- 新增任务申请 -->
+<view class="container">
+  <view class="taskNameContainer">
+    <text class="label">请输入任务名:</text>
+    <input type="text" class="inputBox" model:value="{{content}}" />
+  </view>
+  <view class="taskScoreContainer">
+    <text class="label">可获得积分:</text>
+    <input type="number" class="inputBox" model:value="{{score}}" />
+  </view>
+  <button type="primary" class="submitBtn" catchtap="submit">提交</button>
+</view>

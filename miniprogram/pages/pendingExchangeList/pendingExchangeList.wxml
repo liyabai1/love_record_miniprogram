@@ -1,0 +1,18 @@
+<!--pages/pendingExchangeList/pendingExchangeList.wxml-->
+<!-- 待兑换清单 -->
+<view class="container">
+  <block wx:for="{{list}}" wx:key="_id">
+    <view class="item">
+      <view class="info">
+        <text class="name">{{item.awardInfo.content}}</text>
+        <text class="time">{{item.date}}</text>
+      </view>
+      <view>
+        <van-button type="primary" plain size="small" round color="#CCCCFF" catchtap="confirmExchange" data-_id="{{item._id}}" data-index="{{index}}">确认兑换</van-button>
+      </view>
+    </view>
+  </block>
+  <view wx:if="{{list.length === 0}}">
+    <van-empty description="暂无待兑换的奖励" />
+  </view>
+</view>

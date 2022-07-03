@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<!-- 每日任务页，导航栏第一栏 -->
+<page-meta>
+</page-meta>
+<view class="container">
+  <view class="calendarContainer">
+    <view class="calendarBox">
+      <view wx:for="{{dateArr}}" wx:key="day" class="dateBox">
+        <text class="day">{{item.day}}</text>
+        <text class="{{ selectedDate.date === item.date ? 'date selectedDate' : 'date' }}" catchtap="changeDateOnTopCalendar" data-time="{{item.time}}">{{item.date}}</text>
+      </view>
+    </view>
+    <view style="text-align: center;color: #fff;font-size: 12px;margin: 10px;">
+      <text catchtap="showCalendar">点击查看更多日期 >></text>
+    </view>
+  </view>
+  <view class="taskList">
+    <block wx:for="{{taskList}}" wx:key="_id">
+      <task-item type="dailyTask" _id="{{item._id}}" content="{{item.content}}" score="{{item.score}}" achieved="{{item.achieved}}" catch:changeAchievedState="finishTask" data-index="{{index}}" isNowDay="{{isNowDay}}"></task-item>
+    </block>
+    <van-empty wx:if="{{taskList.length === 0}}" description="暂无任务，快去新增任务吧！" />
+  </view>
+  <!-- 日历选择器 -->
+  <van-calendar color="#CCCCFF" min-date="{{vantCalendar.minDate}}" max-date="{{vantCalendar.maxDate}}" show="{{ vantCalendar.calendarShow }}" bind:close="showCalendar" bind:confirm="changeDate" />
+  <!-- 提示框 -->
+  <van-toast id="van-toast" />
+</view>

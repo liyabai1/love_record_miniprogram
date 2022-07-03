@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "task-item": "../../components/taskItem/index",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,63 @@
+/* pages/sorceDetails/sorceDetails.wxss */
+.container {
+  height: 100%;
+}
+.listContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-top: 1px solid #ccccff;
+  border-bottom: 1px solid #ccccff;
+  margin-bottom: -1px;
+  overflow: hidden;
+}
+.item:first-child {
+  border-top: none;
+}
+.item:last-child {
+  border-bottom: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 60%;
+}
+.name {
+  line-height: 2em;
+}
+.time {
+  font-size: 12px;
+}
+.diff {
+  line-height: 2em;
+  font-weight: bolder;
+}
+.score {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  min-width: 6em;
+}
+.remaining {
+  font-size: 14px;
+}
+
+.getscore {
+  color: var(--getscore-color);
+}
+.spendscore {
+  color: var(--spendscore-color);
+}
+
+.nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,27 @@
+/* pages/taskApplyProcess/taskApplyList/taskApply.wxss */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.taskNameContainer,
+.taskScoreContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.label {
+  width: 40%;
+  text-align: right;
+  padding-right: 5px;
+}
+.inputBox {
+  flex: 1;
+  border: 1px solid #ccccff;
+  line-height: 2em;
+  height: 2em;
+}
+.submitBtn {
+  width: 100%;
+}
